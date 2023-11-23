@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CalculatorButton extends StatelessWidget {
+  static double height = 72.0;
+  static double margin = 8.0;
+
   final Color color;
   final Color textColor;
   final String text;
   final VoidCallback onTap;
+  final bool doubleWidth;
 
   const CalculatorButton({
     Key? key,
@@ -12,6 +16,7 @@ class CalculatorButton extends StatelessWidget {
     required this.textColor,
     required this.text,
     required this.onTap,
+    this.doubleWidth = false,
   }) : super(key: key);
 
   @override
@@ -19,10 +24,14 @@ class CalculatorButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.all(8),
-        decoration: BoxDecoration(color: color, shape: BoxShape.circle),
-        height: 56,
-        width: 56,
+        margin: EdgeInsets.all(margin),
+        decoration: BoxDecoration(
+          color: color,
+          shape: doubleWidth ? BoxShape.rectangle : BoxShape.circle,
+          borderRadius: doubleWidth ? const BorderRadius.all(Radius.circular(32)) : null,
+        ),
+        height: height,
+        width: doubleWidth ? height * 2 + margin * 2 : height,
         child: Center(
           child: Text(
             text,

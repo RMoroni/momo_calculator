@@ -17,17 +17,23 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).shadowColor,
+      backgroundColor: Colors.black,
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Text(
             output.isNotEmpty ? output : '0',
             style: const TextStyle(
-              fontSize: 24,
+              fontSize: 26,
               color: Colors.white,
             ),
           ),
+          const SizedBox(
+            height: 16,
+          ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CalculatorButton(
                 color: Colors.grey,
@@ -62,9 +68,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CalculatorButton(
-                color: Colors.grey,
+                color: Colors.white24,
                 textColor: Colors.white,
                 text: '7',
                 onTap: () {
@@ -72,7 +79,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 },
               ),
               CalculatorButton(
-                color: Colors.grey,
+                color: Colors.white24,
                 textColor: Colors.white,
                 text: '8',
                 onTap: () {
@@ -80,7 +87,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 },
               ),
               CalculatorButton(
-                color: Colors.grey,
+                color: Colors.white24,
                 textColor: Colors.white,
                 text: '9',
                 onTap: () {
@@ -98,9 +105,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CalculatorButton(
-                color: Colors.grey,
+                color: Colors.white24,
                 textColor: Colors.white,
                 text: '4',
                 onTap: () {
@@ -108,7 +116,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 },
               ),
               CalculatorButton(
-                color: Colors.grey,
+                color: Colors.white24,
                 textColor: Colors.white,
                 text: '5',
                 onTap: () {
@@ -116,7 +124,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 },
               ),
               CalculatorButton(
-                color: Colors.grey,
+                color: Colors.white24,
                 textColor: Colors.white,
                 text: '6',
                 onTap: () {
@@ -134,9 +142,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CalculatorButton(
-                color: Colors.grey,
+                color: Colors.white24,
                 textColor: Colors.white,
                 text: '1',
                 onTap: () {
@@ -144,7 +153,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 },
               ),
               CalculatorButton(
-                color: Colors.grey,
+                color: Colors.white24,
                 textColor: Colors.white,
                 text: '2',
                 onTap: () {
@@ -152,7 +161,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 },
               ),
               CalculatorButton(
-                color: Colors.grey,
+                color: Colors.white24,
                 textColor: Colors.white,
                 text: '3',
                 onTap: () {
@@ -170,17 +179,19 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CalculatorButton(
-                color: Colors.grey,
+                color: Colors.white24,
                 textColor: Colors.white,
                 text: '0',
                 onTap: () {
                   numberHandler('0');
                 },
+                doubleWidth: true,
               ),
               CalculatorButton(
-                color: Colors.grey,
+                color: Colors.white24,
                 textColor: Colors.white,
                 text: '.',
                 onTap: () {
@@ -196,6 +207,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 },
               ),
             ],
+          ),
+          const SizedBox(
+            height: 8,
           ),
         ],
       ),
