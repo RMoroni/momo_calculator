@@ -1,16 +1,5 @@
 # momo_calculator
 
-Simple calculator
+Calculadora simples com as operações básicas em Flutter
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Captura de tela de 2023-11-23 14-36-11](https://github.com/RMoroni/momo_calculator/assets/32406306/136a5f3c-5dd8-4e3b-95bc-7226121427f0)
