@@ -9,6 +9,7 @@ class CalculatorButton extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
   final bool doubleWidth;
+  final bool active;
 
   const CalculatorButton({
     Key? key,
@@ -17,6 +18,7 @@ class CalculatorButton extends StatelessWidget {
     required this.text,
     required this.onTap,
     this.doubleWidth = false,
+    this.active = false,
   }) : super(key: key);
 
   @override
@@ -26,7 +28,7 @@ class CalculatorButton extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.all(margin),
         decoration: BoxDecoration(
-          color: color,
+          color: active ? textColor : color,
           shape: doubleWidth ? BoxShape.rectangle : BoxShape.circle,
           borderRadius: doubleWidth ? const BorderRadius.all(Radius.circular(32)) : null,
         ),
@@ -38,7 +40,7 @@ class CalculatorButton extends StatelessWidget {
             style: TextStyle(
               fontSize: 26,
               fontWeight: FontWeight.bold,
-              color: textColor,
+              color: active ? color : textColor,
             ),
           ),
         ),

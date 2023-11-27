@@ -64,6 +64,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 onTap: () {
                   operatorHandler('/');
                 },
+                active: operator.isNotEmpty && operator == '/',
               ),
             ],
           ),
@@ -101,6 +102,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 onTap: () {
                   operatorHandler('x');
                 },
+                active: operator.isNotEmpty && operator == 'x',
               ),
             ],
           ),
@@ -138,6 +140,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 onTap: () {
                   operatorHandler('-');
                 },
+                active: operator.isNotEmpty && operator == '-',
               ),
             ],
           ),
@@ -175,6 +178,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 onTap: () {
                   operatorHandler('+');
                 },
+                active: operator.isNotEmpty && operator == '+',
               ),
             ],
           ),
@@ -220,6 +224,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     if (operator.isNotEmpty && output.isNotEmpty) {
       setState(() {
         output = makeOperation();
+        operator = '';
       });
     }
   }
@@ -245,7 +250,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         output = '${operand / 100}';
       });
     } else {
-      operator = operatorInput;
+      setState(() {
+        operator = operatorInput;
+      });
       operandConfirmed = true;
     }
   }
@@ -253,6 +260,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   void clearHandler() {
     setState(() {
       output = '';
+      operator = '';
+      operand = 0.0;
+      operandConfirmed = false;
     });
   }
 
